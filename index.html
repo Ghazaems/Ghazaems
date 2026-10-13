@@ -1306,7 +1306,7 @@
 
     .about-sidebar {
       position: sticky;
-      top: 96px;
+      top: max(16px, calc((100dvh - var(--sidebar-height, 680px)) / 2));
       display: flex;
       flex-direction: column;
       gap: 14px;
@@ -1315,6 +1315,18 @@
       background: linear-gradient(155deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.06));
       border: 1px solid rgba(255, 255, 255, 0.35);
       box-shadow: 0 30px 60px rgba(27, 25, 26, 0.14);
+    }
+
+    @media (min-width:901px) {
+      .about-sidebar {
+        max-height: calc(100dvh - 32px);
+        overflow-y: auto;
+        scrollbar-width: thin;
+      }
+
+      .about-sidebar > * {
+        flex-shrink: 0;
+      }
     }
 
     .sb-card {
@@ -5619,6 +5631,17 @@
         swap();
         setInterval(swap, HOLD);
       }, FIRST_DELAY);
+    }
+
+    // Keep the floating sidebar centered within the visible viewport.
+    const floatingSidebar = document.querySelector('.about-sidebar');
+    if (floatingSidebar) {
+      const updateSidebarHeight = () => {
+        floatingSidebar.style.setProperty('--sidebar-height', floatingSidebar.offsetHeight + 'px');
+      };
+      updateSidebarHeight();
+      if ('ResizeObserver' in window) new ResizeObserver(updateSidebarHeight).observe(floatingSidebar);
+      window.addEventListener('resize', updateSidebarHeight);
     }
 
     // ---------- INIT ----------
