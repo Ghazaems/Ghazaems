@@ -3,6 +3,14 @@
 
 <head>
   <meta charset="UTF-8">
+  <script>
+    const restartFromTop = performance.getEntriesByType('navigation')[0]?.type === 'reload';
+    if (restartFromTop) {
+      history.scrollRestoration = 'manual';
+      history.replaceState(history.state, '', location.pathname + location.search);
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ghazaems Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -5393,6 +5401,7 @@
       function exit() {
         if (exited) return;
         exited = true;
+        if (restartFromTop) window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
         splash.classList.add('splash-fade-out');
         document.body.style.overflow = '';
         setTimeout(() => { splash.classList.add('splash-collapsed'); }, FADE);
