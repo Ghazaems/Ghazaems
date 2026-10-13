@@ -5361,7 +5361,7 @@
     function initSmoothAnchorNav() {
       document.addEventListener('click', (e) => {
         const a = e.target.closest('a[href^="#"]');
-        if (!a) return;
+        if (!a || a.classList.contains('contact-trigger')) return;
         const href = a.getAttribute('href');
         if (!href || href === '#') return;
         const target = document.querySelector(href);
