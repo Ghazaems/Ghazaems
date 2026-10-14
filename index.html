@@ -2613,6 +2613,8 @@
       height: 100%;
       width: max-content;
       animation: closing-photobar-scroll 32s linear infinite;
+      will-change: transform;
+      backface-visibility: hidden;
     }
 
     .closing-photobar img {
@@ -2621,6 +2623,8 @@
       display: block;
       opacity: 0.9;
       flex-shrink: 0;
+      margin-right: -2px;
+      clip-path: inset(0 1px);
     }
 
     @keyframes closing-photobar-scroll {
