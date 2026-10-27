@@ -4004,7 +4004,7 @@
         <div class="orbit-ring" aria-hidden="true"></div>
         <div class="orbit-slot orbit-slot--a">
           <div class="float-stat">
-            <b data-count="6" data-suffix="+">0</b>
+            <b data-count="7" data-suffix="+">0</b>
             <span>Research Project</span>
           </div>
         </div>
@@ -4561,11 +4561,12 @@
 
   <script>
     // ---------- DATA LAYER ----------
-    const STORAGE_KEY = 'ghaza-projects-v3';
+    const STORAGE_KEY = 'ghaza-projects-v4';
     const storageAvailable = !!(window.storage && typeof window.storage.get === 'function');
     const bandColors = ['#943A1F', '#1B191A', '#C4472E'];
 
     const defaultProjects = [
+      { id: 'p10', ticker: 'ADRO', year: '2026', title: 'Equity Research PT Alamtri Resources Indonesia Tbk (ADRO), BUY Recommendation', description: 'Initiating coverage on PT Alamtri Resources Indonesia Tbk (ADRO), covering met coal demand growth driven by India, aluminium smelter ramp-up, DCF-FCFF, SOTP, and Monte Carlo simulation with a BUY recommendation (TP: Rp3.280, +31.7% upside).', stat: 'BUY Recommendation', tags: ['Equity Research', 'Coal & Mining', 'DCF & SOTP Valuation'], cover: 'https://drive.google.com/file/d/1W_zAdWuO0pUZQT3SCJPKNjhl8lqUh0Ya/view?usp=sharing', link: 'https://drive.google.com/file/d/1JTKpD_V87swDu-3MJHkGG65Yg86ISeJb/view?usp=sharing' },
       { id: 'p9', ticker: 'BULL', year: '2026', title: 'Equity Research PT Buana Lintas Lautan Tbk (BULL), BUY Recommendation', description: 'Monthly equity research on PT Buana Lintas Lautan Tbk (BULL), covering LNG expansion and oil and gas shipping, with a BUY recommendation.', stat: 'BUY Recommendation', tags: ['Equity Research', 'Oil & Gas Shipping', 'DCF Valuation'], cover: 'https://drive.google.com/file/d/1CYlv2DrHnosPYQunHiHgJP9ptzH6ugUo/view?usp=sharing', link: 'https://drive.google.com/file/d/1jy5BNWLYbJ4ODSUhUHst4KGKVwEs0ziH/view?usp=sharing' },
       { id: 'p1', ticker: 'MCOL', year: '2026', title: 'Equity Research PT Prima Andalan Mandiri Tbk (MCOL), SELL Recommendation', description: 'Equity Research PT Prima Andalan Mandiri Tbk (MCOL), SELL Recommendation', stat: 'SELL Recommendation', tags: ['Equity Research', 'Coal Mining', 'HBA Analysis'], cover: 'https://drive.google.com/file/d/1CryBROSZsjbm4PHcjUrnJjqxuJ2bASqp/view?usp=sharing', link: 'https://drive.google.com/file/d/1HIAqH-C4JRS6Xj_dMXk5iWf14uTsddP8/view?usp=sharing' },
       { id: 'p3', ticker: 'BRMS', year: '2026', title: 'Bumi Resources Minerals (BRMS): Unlocking Value through Gold Production Expansion', description: 'Equity Research PT Bumi Resources Minerals Tbk (BRMS), BUY Recommendation', stat: 'BUY Recommendation', tags: ['DCF Valuation', 'Gold Mining', 'Sensitivity Analysis'], cover: 'https://drive.google.com/file/d/1LEA7IFhBGbVIn7g7h1BIZH9bJA9eFuLA/view?usp=sharing', link: 'https://drive.google.com/file/d/16KtrIbr7m_SI0nGxF4NqRaxuEatNH5E9/view?usp=sharing' },
